@@ -30,6 +30,8 @@
 /build/
 .flutter-plugins-dependencies
 flutter_export_environment.sh
+Flutter.podspec
+.last_build_id
 
 # Android related
 **/android/**/gradle-wrapper.jar

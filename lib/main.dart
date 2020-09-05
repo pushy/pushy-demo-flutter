@@ -1,12 +1,34 @@
-import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
+import 'dart:io' show Platform;
+import 'dart:async';
+
 import 'package:flutter/services.dart';
 import 'package:pushy_flutter/pushy_flutter.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(Main());
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+// Please place this code in main.dart,
+// After the import statements, and outside any Widget class (top-level)
+
+void backgroundNotificationListener(Map<String, dynamic> data) {
+  // Print notification payload data
+  print('Received notification: $data');
+
+  // Notification title
+  String notificationTitle = 'MyApp';
+
+  // Attempt to extract the "message" property from the payload: {"message":"Hello World!"}
+  String notificationText = data['message'] ?? 'Hello World!';
+
+  // Android: Displays a system notification
+  // iOS: Displays an alert dialog
+  Pushy.notify(notificationTitle, notificationText, data);
+
+  // Clear iOS app badge number
+  Pushy.clearBadge();
+}
+
+class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,6 +60,7 @@ class _PushyDemoState extends State<PushyDemo> {
     initPlatformState();
   }
 
+  // Platform messages are asynchronous, so we initialize in an async method
   Future<void> initPlatformState() async {
     // Start the Pushy service
     Pushy.listen();
@@ -75,13 +98,13 @@ class _PushyDemoState extends State<PushyDemo> {
       });
     }
 
-    // Listen for push notifications
-    Pushy.setNotificationListener((Map<String, dynamic> data) {
-      // Print notification payload data
-      print('Received notifications: $data');
+    // Listen for push notifications received
+    Pushy.setNotificationListener(backgroundNotificationListener);
 
-      // Clear iOS app badge number
-      Pushy.clearBadge();
+    // Listen for push notification clicked
+    Pushy.setNotificationClickListener((Map<String, dynamic> data) {
+      // Print notification payload data
+      print('Notification clicked: $data');
 
       // Extract notification messsage
       String message = data['message'] ?? 'Hello World!';
@@ -91,7 +114,7 @@ class _PushyDemoState extends State<PushyDemo> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-              title: Text('Pushy'),
+              title: Text('Notification clicked'),
               content: Text(message),
               actions: [
                 FlatButton(
@@ -103,6 +126,9 @@ class _PushyDemoState extends State<PushyDemo> {
               ]);
         },
       );
+
+      // Clear iOS app badge number
+      Pushy.clearBadge();
     });
   }
 

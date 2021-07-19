@@ -64,6 +64,9 @@ class _PushyDemoState extends State<PushyDemo> {
   Future<void> initPlatformState() async {
     // Start the Pushy service
     Pushy.listen();
+    
+    // Enable FCM Fallback Delivery
+    Pushy.toggleFCM(true);
 
     // Set custom notification icon (Android)
     Pushy.setNotificationIcon('ic_notify');

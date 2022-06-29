@@ -1,6 +1,6 @@
 # pushy-demo-flutter
 
-A demo of the [Pushy SDK for Flutter](https://github.com/pushy-me/pushy-flutter) integrated into a sample Flutter app.
+A demo of the [Pushy SDK for Flutter](https://github.com/pushy/pushy-flutter) integrated into a sample Flutter app.
 
 > [Pushy](https://pushy.me/) is the most reliable push notification gateway, perfect for real-time, mission-critical applications.
 
@@ -21,7 +21,7 @@ Visit our documentation to [integrate Pushy into your existing Flutter app](http
 ## Get Started
 
 * Make sure you have a healthy installation of Flutter: `flutter doctor`
-* Clone the repository locally: `git clone https://github.com/pushy-me/pushy-demo-flutter.git`
+* Clone the repository locally: `git clone https://github.com/pushy/pushy-demo-flutter.git`
 * Run `cd pushy-demo-flutter`
 * Run `flutter run` to run the app on either an emulator or a connected Android device
 * Observe the Android logcat for the Pushy device token and paste it into the [demo page](https://pushy.me/docs/resources/demo) to send yourself a test notification

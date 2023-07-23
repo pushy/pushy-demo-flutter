@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:io' show Platform;
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:pushy_flutter/pushy_flutter.dart';
 
 void main() => runApp(Main());
@@ -65,6 +64,9 @@ class _PushyDemoState extends State<PushyDemo> {
   Future<void> initPlatformState() async {
     // Start the Pushy service
     Pushy.listen();
+
+    // Set Pushy App ID (required for Web Push)
+    Pushy.setAppId('550ee57c5b5d72117f51e801');
     
     // Enable FCM Fallback Delivery
     Pushy.toggleFCM(true);
@@ -86,11 +88,11 @@ class _PushyDemoState extends State<PushyDemo> {
       setState(() {
         _deviceToken = deviceToken;
         _instruction =
-            Platform.isAndroid ? '(copy from logcat)' : '(copy from console)';
+            isAndroid() ? '(copy from logcat)' : '(copy from console)';
       });
-    } on PlatformException catch (error) {
+    } catch (error) {
       // Print to console/logcat
-      print('Error: ${error.message}');
+      print('Error: ${error.toString()}');
 
       // Show error
       setState(() {
@@ -163,5 +165,15 @@ class _PushyDemoState extends State<PushyDemo> {
             ])),
       ),
     );
+  }
+}
+
+bool isAndroid() {
+  try {
+    // Return whether the device is running on Android
+    return Platform.isAndroid;
+  } catch (e) {
+    // If it fails, we're on Web
+    return false;
   }
 }

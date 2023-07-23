@@ -32,6 +32,9 @@
   <title>Pushy</title>
   <link rel="manifest" href="manifest.json">
 
+  <!-- Pushy Web SDK-->
+  <script src="https://sdk.pushy.me/web/1.0.10/pushy-sdk.js"></script>
+
   <script>
     // The value below is injected by flutter build, do not touch.
     var serviceWorkerVersion = null;
@@ -45,6 +48,7 @@
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
+          serviceWorkerUrl: 'service-worker.js',
           serviceWorkerVersion: serviceWorkerVersion,
         }
       }).then(function(engineInitializer) {

@@ -167,10 +167,10 @@ packages:
     dependency: "direct main"
     description:
       name: pushy_flutter
-      sha256: "66dead80c40d86055420b221621489ef453576032c02fe474ab9500b60fc09dd"
+      sha256: "02acaa9cc984728e3ea3a3a2381f175c56d4d6938e5fc44407b546e49feb9c50"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.20"
+    version: "2.0.22"
   sky_engine:
     dependency: transitive
     description: flutter

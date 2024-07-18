@@ -71,9 +71,6 @@ class _PushyDemoState extends State<PushyDemo> {
     // Enable FCM Fallback Delivery
     Pushy.toggleFCM(true);
 
-    // Set custom notification icon (Android)
-    Pushy.setNotificationIcon('ic_notify');
-
     try {
       // Register the device for push notifications
       String deviceToken = await Pushy.register();

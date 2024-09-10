@@ -83,14 +83,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  get:
-    dependency: transitive
-    description:
-      name: get
-      sha256: e4e7335ede17452b391ed3b2ede016545706c01a02292a6c97619705e7d2a85e
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.6.6"
   html:
     dependency: transitive
     description:
@@ -167,10 +159,10 @@ packages:
     dependency: "direct main"
     description:
       name: pushy_flutter
-      sha256: "02acaa9cc984728e3ea3a3a2381f175c56d4d6938e5fc44407b546e49feb9c50"
+      sha256: c6da8845678829073037b7c77b1ac2e103e398c729fb63dd41ad332d052e85f8
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.22"
+    version: "2.0.27"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -266,4 +258,4 @@ packages:
     version: "13.0.0"
 sdks:
   dart: ">=3.2.0-0 <4.0.0"
-  flutter: ">=3.13.0"
+  flutter: ">=1.12.0"

@@ -29,6 +29,7 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 31
+    namespace "me.pushy.example"
 
     lintOptions {
         disable 'InvalidPackage'

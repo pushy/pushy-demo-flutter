@@ -32,6 +32,7 @@
 flutter_export_environment.sh
 Flutter.podspec
 .last_build_id
+.cxx/
 
 # Android related
 **/android/**/gradle-wrapper.jar

@@ -91,14 +91,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.15.5"
-  js:
-    dependency: transitive
-    description:
-      name: js
-      sha256: "53385261521cc4a0c4658fd0ad07a7d14591cf8fc33abbceae306ddb974888dc"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.7.2"
   leak_tracker:
     dependency: transitive
     description:
@@ -159,10 +151,10 @@ packages:
     dependency: "direct main"
     description:
       name: pushy_flutter
-      sha256: "2989f93c632080d6e207fb968bd3994c31774a9272997464e5d98ea5cd47d06e"
+      sha256: "9b3aef2a086d84e9ee2dd0d72ee8428d402a26404ce8cded0bea5bf00dad38c5"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.30"
+    version: "2.0.40"
   sky_engine:
     dependency: transitive
     description: flutter
